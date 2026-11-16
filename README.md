@@ -19,16 +19,16 @@ moment, clean procedural craft, and a composition that still reads at 300 px.
 ## How it works
 
 `main.ts` (Node 22, standard library only) draws everything in code onto a
-float RGB framebuffer — sky gradient, stars, sun with god rays, teal ocean
-with wave lines and reflections, the tilted blazing ring with flame tongues,
-the koi itself (cubic-bezier spine, width profile, orange/red patches, scale
-arcs, dorsal and pectoral fins, flowing tail ribbons, eye, whiskers), the
-splash and spray droplets, diagonal speed lines, and a vignette — then encodes
-the result as a PNG with a hand-written encoder (CRC32 + `node:zlib`
+float RGB framebuffer — sky gradient, stars and birds, sun with god rays, teal
+ocean with wave lines and sun/ring reflections, the tilted blazing ring with
+flame tongues, the koi itself (cubic-bezier spine, width profile, orange
+patches, scale arcs, smooth dorsal ridge, forked tail ribbons, eye, whiskers),
+the splash and spray droplets, diagonal speed lines, and a vignette — then
+encodes the result as a PNG with a hand-written encoder (CRC32 + `node:zlib`
 deflate, per-row filter choice).
 
 Every random choice comes from a seeded PRNG (mulberry32), so two runs write
-byte-identical output.
+byte-identical output. No image assets, no network, no file reads.
 
 ## Run
 
